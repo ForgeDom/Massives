@@ -2,9 +2,9 @@
 #include <Windows.h>
 using namespace std;
 
-main() {
+int main() {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 
-	return 0;
+    return 0;
 }
