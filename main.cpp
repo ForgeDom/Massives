@@ -1,10 +1,38 @@
 #include <iostream>
 #include <Windows.h>
+#include <ctime>
 using namespace std;
 
-main() {
-	SetConsoleOutputCP(1251);
-	SetConsoleCP(1251);
+int main() {
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
 
-	return 0;
+    srand(time(0));
+    const int size = 10;
+    int arr[size] = {};
+    int min, max;
+
+    for (int i = 0; i < size; i++) {
+        arr[i] = rand() % 20 - 10;
+    }
+    
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    min = arr[0];
+    max = arr[0];
+
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    cout << endl;
+    cout << "Мінімальне значення: " << min << endl;
+    cout << "Максимальне значення: " << max << endl;
+
+    return 0;
 }
